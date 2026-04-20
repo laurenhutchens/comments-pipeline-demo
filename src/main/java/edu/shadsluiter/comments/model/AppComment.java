@@ -1,5 +1,6 @@
 package edu.shadsluiter.comments.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
  
 
@@ -8,12 +9,14 @@ public class AppComment {
     private String author;
     private String content;
     private LocalDateTime timestamp;
+    private LocalDate date;
 
     public AppComment(int id, String author, String content) {
         this.id = id;
         this.author = author;
         this.content = content;
         this.timestamp = LocalDateTime.now();
+        this.date = LocalDate.now();
     }
 
     public int getId() {
@@ -46,6 +49,14 @@ public class AppComment {
 
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 
 
