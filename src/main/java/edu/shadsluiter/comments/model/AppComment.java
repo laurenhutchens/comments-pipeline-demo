@@ -6,12 +6,14 @@ import java.time.LocalDateTime;
 public class AppComment {
     private int id;
     private String author;
-    private String content; 
+    private String content;
+    private LocalDateTime timestamp;
 
-    public AppComment(int id, String author, String content ) {
+    public AppComment(int id, String author, String content) {
         this.id = id;
         this.author = author;
-        this.content = content; 
+        this.content = content;
+        this.timestamp = LocalDateTime.now();
     }
 
     public int getId() {
@@ -37,8 +39,15 @@ public class AppComment {
     public void setId(int id) {
         this.id = id;
     }
- 
-    
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
 
     @Override
 
