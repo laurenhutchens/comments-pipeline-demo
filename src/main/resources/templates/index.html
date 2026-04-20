@@ -42,6 +42,16 @@
 
     </table>
 
+    <!-- search form -->
+    <form th:action="@{/search}" method="get" style="margin-bottom: 20px;">
+      <div class="mb-3">
+        <label for="searchTerm" class="form-label">Search Comments</label>
+        <input type="text" class="form-control" id="searchTerm" name="searchTerm" placeholder="Search by content or author">
+      </div>
+      <button type="submit">Search</button>
+      <a href="/"><button type="button" style="margin-left:8px;">Clear</button></a>
+    </form>
+
     <!-- form to add comments   -->
     <form th:action="@{/submitComment}" method="post">
       <div class="mb-3">

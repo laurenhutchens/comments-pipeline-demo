@@ -21,6 +21,12 @@ public class MainController {
         return "index";  // resolves to src/main/resources/templates/index.html
     }
 
+    @GetMapping("/search")
+    public String search(@RequestParam String searchTerm, Model model) {
+        model.addAttribute("comments", commentsDAO.searchForComments(searchTerm));
+        return "index";
+    }
+
     // Handle the form submission
     @PostMapping("/submitComment")
     public String submitComment(String author, String content) {
